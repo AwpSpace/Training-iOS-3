@@ -16,6 +16,7 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
     @IBOutlet weak var inputKeyWord: UITextField!
     @IBOutlet weak var flickrPhotosCollection: UICollectionView!
     
+    var jsonResponse:String = ""
     var items:Array<AnyObject> = []
     
     override func viewDidLoad() {
@@ -41,6 +42,8 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
             searchKeyWord = inputKeyWord.text!
         }
         
+        print("Search key word: "+searchKeyWord)
+        
         //Call api
         let URL:String = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags="+searchKeyWord
         Alamofire.request(.GET, URL)
@@ -55,22 +58,27 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
                 
                 jsonString = jsonString.substringWithRange(Range<String.Index>(start: jsonString.startIndex.advancedBy(15), end: jsonString.endIndex.advancedBy(-1)))
                 
-                print("JSON: "+jsonString)
-                
-                // convert String to NSData
-                let data: NSData = jsonString.dataUsingEncoding(NSUTF8StringEncoding)!
-                
-                do {
-                    // convert NSData to 'AnyObject'
-                    let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                    if let dictionary = object as? [String: AnyObject] {
-                    print("Parse json successful!")
-                    self.items = (dictionary["items"] as? Array)!
-                    self.loadCollectionView()
-                    }
-                } catch {
-                    print("Error, Could not parse the JSON request: ")
-                }
+                self.jsonResponse = jsonString
+                self.parseJsonResponse()
+        }
+    }
+    
+    func parseJsonResponse(){
+        print("JSON: "+jsonResponse)
+        
+        // convert String to NSData
+        let data: NSData = jsonResponse.dataUsingEncoding(NSUTF8StringEncoding)!
+        
+        do {
+            // convert NSData to 'AnyObject'
+            let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+            if let dictionary = object as? [String: AnyObject] {
+                print("Parse json successful!")
+                self.items = (dictionary["items"] as? Array)!
+                self.loadCollectionView()
+            }
+        } catch{
+            print("Error, Could not parse the JSON request: ")
         }
     }
     
