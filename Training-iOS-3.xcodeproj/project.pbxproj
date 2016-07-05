@@ -10,6 +10,12 @@
 		2F70915A280828F51D451251 /* Pods_Training_iOS_3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B827008A5E85B6A8606877C9 /* Pods_Training_iOS_3.framework */; };
 		655267E91D17CC8800A55EAD /* Libraries in Resources */ = {isa = PBXBuildFile; fileRef = 655267E81D17CC8800A55EAD /* Libraries */; };
 		655267ED1D17EB9F00A55EAD /* ExplorePhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655267EC1D17EB9F00A55EAD /* ExplorePhotoCollectionViewCell.swift */; };
+		65B3DAD51D2B57C700CE11E4 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B3DAD41D2B57C700CE11E4 /* ExploreViewController.swift */; };
+		65B3DAD71D2B5F3F00CE11E4 /* FlickrResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B3DAD61D2B5F3F00CE11E4 /* FlickrResponse.swift */; };
+		65B3DADC1D2B642200CE11E4 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B3DAD81D2B642200CE11E4 /* Alamofire.framework */; };
+		65B3DADD1D2B642200CE11E4 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B3DAD91D2B642200CE11E4 /* Kingfisher.framework */; };
+		65B3DADE1D2B642200CE11E4 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B3DADA1D2B642200CE11E4 /* Rswift.framework */; };
+		65B3DADF1D2B642200CE11E4 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B3DADB1D2B642200CE11E4 /* SwiftyJSON.framework */; };
 		65D5161E1D17C72A00AC66F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5161D1D17C72A00AC66F6 /* AppDelegate.swift */; };
 		65D516231D17C72A00AC66F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D516211D17C72A00AC66F6 /* Main.storyboard */; };
 		65D516251D17C72A00AC66F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D516241D17C72A00AC66F6 /* Assets.xcassets */; };
@@ -21,6 +27,12 @@
 		1F9E39CFB2EFC20FC165C5D7 /* Pods-Training-iOS-3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Training-iOS-3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Training-iOS-3/Pods-Training-iOS-3.release.xcconfig"; sourceTree = "<group>"; };
 		655267E81D17CC8800A55EAD /* Libraries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Libraries; sourceTree = "<group>"; };
 		655267EC1D17EB9F00A55EAD /* ExplorePhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExplorePhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		65B3DAD41D2B57C700CE11E4 /* ExploreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExploreViewController.swift; path = "Training-iOS-3/Controller/ExploreViewController.swift"; sourceTree = SOURCE_ROOT; };
+		65B3DAD61D2B5F3F00CE11E4 /* FlickrResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlickrResponse.swift; path = "Training-iOS-3/Model/FlickrResponse.swift"; sourceTree = SOURCE_ROOT; };
+		65B3DAD81D2B642200CE11E4 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../../Library/Developer/Xcode/DerivedData/Training-iOS-3-eysxerrehkguetbbtlhhmdwuydow/Build/Products/Debug-iphonesimulator/Alamofire.framework"; sourceTree = "<group>"; };
+		65B3DAD91D2B642200CE11E4 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/Training-iOS-3-eysxerrehkguetbbtlhhmdwuydow/Build/Products/Debug-iphonesimulator/Kingfisher.framework"; sourceTree = "<group>"; };
+		65B3DADA1D2B642200CE11E4 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Training-iOS-3-eysxerrehkguetbbtlhhmdwuydow/Build/Products/Debug-iphonesimulator/Rswift.framework"; sourceTree = "<group>"; };
+		65B3DADB1D2B642200CE11E4 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Training-iOS-3-eysxerrehkguetbbtlhhmdwuydow/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		65D5161A1D17C72A00AC66F6 /* Training-iOS-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Training-iOS-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D5161D1D17C72A00AC66F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65D516221D17C72A00AC66F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,6 +47,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B3DADC1D2B642200CE11E4 /* Alamofire.framework in Frameworks */,
+				65B3DADD1D2B642200CE11E4 /* Kingfisher.framework in Frameworks */,
+				65B3DADE1D2B642200CE11E4 /* Rswift.framework in Frameworks */,
+				65B3DADF1D2B642200CE11E4 /* SwiftyJSON.framework in Frameworks */,
 				2F70915A280828F51D451251 /* Pods_Training_iOS_3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +69,7 @@
 		655267E31D17CA7B00A55EAD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				65B3DAD41D2B57C700CE11E4 /* ExploreViewController.swift */,
 			);
 			name = Controller;
 			path = View/Controller;
@@ -69,6 +86,7 @@
 		655267E51D17CA7B00A55EAD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				65B3DAD61D2B5F3F00CE11E4 /* FlickrResponse.swift */,
 			);
 			name = Model;
 			path = View/Model;
@@ -130,6 +148,10 @@
 		AC1CA95B803AB382C850D1C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				65B3DAD81D2B642200CE11E4 /* Alamofire.framework */,
+				65B3DAD91D2B642200CE11E4 /* Kingfisher.framework */,
+				65B3DADA1D2B642200CE11E4 /* Rswift.framework */,
+				65B3DADB1D2B642200CE11E4 /* SwiftyJSON.framework */,
 				B827008A5E85B6A8606877C9 /* Pods_Training_iOS_3.framework */,
 			);
 			name = Frameworks;
@@ -268,7 +290,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65D5161E1D17C72A00AC66F6 /* AppDelegate.swift in Sources */,
+				65B3DAD71D2B5F3F00CE11E4 /* FlickrResponse.swift in Sources */,
 				655267ED1D17EB9F00A55EAD /* ExplorePhotoCollectionViewCell.swift in Sources */,
+				65B3DAD51D2B57C700CE11E4 /* ExploreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

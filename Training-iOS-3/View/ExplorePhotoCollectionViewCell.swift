@@ -9,5 +9,6 @@
 import UIKit
 
 class ExplorePhotoCollectionViewCell: UICollectionViewCell {
-    
+
+    @IBOutlet weak var flickrPhoto: UIImageView!
 }

@@ -223,7 +223,7 @@
         <!--Explore-->
         <scene sceneID="RLX-qJ-wwf">
             <objects>
-                <viewController id="NZ2-Ys-JKD" sceneMemberID="viewController">
+                <viewController id="NZ2-Ys-JKD" customClass="ExploreViewController" customModule="Training_iOS_3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Hw-K2-Gpu"/>
                         <viewControllerLayoutGuide type="bottom" id="gy9-ge-Z3V"/>
@@ -247,24 +247,43 @@
                                     <constraint firstAttribute="width" constant="60" id="Kym-Tl-ipD"/>
                                 </constraints>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchPhotos:" destination="NZ2-Ys-JKD" eventType="touchUpInside" id="DMi-SW-Lnw"/>
+                                </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QTA-Jb-A4p">
                                 <rect key="frame" x="20" y="117" width="560" height="434"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lck-6h-188">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="116" height="107"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nCp-rl-0FU" customClass="ExplorePhotoCollectionViewCell" customModule="Training_iOS_3" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="FlickrPhotoCell" reuseIdentifier="FlickrPhotoCell" id="nCp-rl-0FU" customClass="ExplorePhotoCollectionViewCell" customModule="Training_iOS_3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="107"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="107"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FjS-yN-3ti">
+                                                    <rect key="frame" x="8" y="8" width="100" height="91"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="FjS-yN-3ti" secondAttribute="trailing" id="6Qh-N4-dPl"/>
+                                            <constraint firstItem="FjS-yN-3ti" firstAttribute="leading" secondItem="nCp-rl-0FU" secondAttribute="leadingMargin" id="Iri-5f-lMX"/>
+                                            <constraint firstItem="FjS-yN-3ti" firstAttribute="top" secondItem="nCp-rl-0FU" secondAttribute="topMargin" id="eQZ-KJ-rQa"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="FjS-yN-3ti" secondAttribute="bottom" id="qia-fd-Ff4"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="flickrPhoto" destination="FjS-yN-3ti" id="s98-OD-pdd"/>
+                                            <outlet property="photo" destination="FjS-yN-3ti" id="25S-Cn-HNU"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -283,6 +302,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Explore" id="l5M-Al-hW2"/>
+                    <connections>
+                        <outlet property="flickrPhotosCollection" destination="QTA-Jb-A4p" id="aRx-SS-Rdi"/>
+                        <outlet property="inputKeyWord" destination="la5-Ts-xdQ" id="DTX-bk-IW5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjU-2N-Obc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
