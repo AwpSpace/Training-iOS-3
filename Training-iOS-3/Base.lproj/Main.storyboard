@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Setting-->
         <scene sceneID="VUO-3m-HWL">
             <objects>
                 <tableViewController id="4qT-nP-E6q" sceneMemberID="viewController">
@@ -94,18 +94,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44S-vp-2ya">
-                                                    <rect key="frame" x="8" y="8" width="544" height="27.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44S-vp-2ya">
+                                                    <rect key="frame" x="8" y="8" width="524" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHY-JR-Lxc">
+                                                    <rect key="frame" x="535" y="8" width="62" height="27.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="YiA-xq-vc8"/>
+                                                    </constraints>
+                                                </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="44S-vp-2ya" secondAttribute="trailing" id="AcF-Px-X0j"/>
+                                                <constraint firstItem="nHY-JR-Lxc" firstAttribute="top" secondItem="AMA-3i-CEo" secondAttribute="topMargin" id="2dG-4n-LcQ"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="nHY-JR-Lxc" secondAttribute="trailing" id="5nM-zs-UKK"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="44S-vp-2ya" secondAttribute="trailing" constant="60" id="AcF-Px-X0j"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="nHY-JR-Lxc" secondAttribute="bottom" id="K5m-ld-k2U"/>
                                                 <constraint firstItem="44S-vp-2ya" firstAttribute="top" secondItem="AMA-3i-CEo" secondAttribute="topMargin" id="k78-xx-bRa"/>
                                                 <constraint firstItem="44S-vp-2ya" firstAttribute="leading" secondItem="AMA-3i-CEo" secondAttribute="leadingMargin" id="r9l-Ig-qik"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="44S-vp-2ya" secondAttribute="bottom" id="rhg-tJ-M63"/>
+                                                <constraint firstItem="nHY-JR-Lxc" firstAttribute="leading" secondItem="44S-vp-2ya" secondAttribute="trailing" id="vhx-A9-ZDA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -122,11 +132,20 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BuK-LX-ZDU">
+                                                    <rect key="frame" x="543" y="6" width="62" height="27.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="OFM-RM-QPI"/>
+                                                    </constraints>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="K4g-iT-lR7" secondAttribute="bottom" id="1jA-cb-4cV"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="K4g-iT-lR7" secondAttribute="trailing" id="IXq-dz-87q"/>
+                                                <constraint firstItem="BuK-LX-ZDU" firstAttribute="leading" secondItem="K4g-iT-lR7" secondAttribute="trailing" id="8yg-Ih-1Ah"/>
+                                                <constraint firstItem="BuK-LX-ZDU" firstAttribute="top" secondItem="HW6-K5-ulA" secondAttribute="topMargin" id="CNe-HT-Uka"/>
+                                                <constraint firstItem="BuK-LX-ZDU" firstAttribute="trailing" secondItem="HW6-K5-ulA" secondAttribute="trailingMargin" id="HJq-mR-5My"/>
                                                 <constraint firstItem="K4g-iT-lR7" firstAttribute="leading" secondItem="HW6-K5-ulA" secondAttribute="leadingMargin" id="Ogu-uS-VHr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BuK-LX-ZDU" secondAttribute="bottom" id="S00-hC-J9c"/>
                                                 <constraint firstItem="K4g-iT-lR7" firstAttribute="top" secondItem="HW6-K5-ulA" secondAttribute="topMargin" id="sNI-fl-iwC"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -161,7 +180,7 @@
                             <outlet property="delegate" destination="4qT-nP-E6q" id="dQI-3c-feC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wTU-t2-Jfi"/>
+                    <navigationItem key="navigationItem" title="Setting" id="wTU-t2-Jfi"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVJ-J7-XaG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -170,7 +189,7 @@
         <!--Setting-->
         <scene sceneID="g3L-7T-UvP">
             <objects>
-                <navigationController id="enB-CY-uRG" sceneMemberID="viewController">
+                <navigationController title="Setting" id="enB-CY-uRG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Setting" image="TabIconSetting2x" id="tIM-te-V2t"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="upP-fc-ZRe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -201,7 +220,7 @@
             </objects>
             <point key="canvasLocation" x="-183" y="-171"/>
         </scene>
-        <!--View Controller-->
+        <!--Explore-->
         <scene sceneID="RLX-qJ-wwf">
             <objects>
                 <viewController id="NZ2-Ys-JKD" sceneMemberID="viewController">
@@ -263,7 +282,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="QTA-Jb-A4p" secondAttribute="trailing" id="wNK-6U-ucS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="l5M-Al-hW2"/>
+                    <navigationItem key="navigationItem" title="Explore" id="l5M-Al-hW2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fjU-2N-Obc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
