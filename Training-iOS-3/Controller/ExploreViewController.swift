@@ -21,7 +21,8 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        flickrPhotosCollection.dataSource = self
+        flickrPhotosCollection.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -44,47 +45,82 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
         
         print("Search key word: "+searchKeyWord)
         
-        //Call api
-        let URL:String = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags="+searchKeyWord
-        Alamofire.request(.GET, URL)
-            .responseString { response in
-                /*
-                 print(response.request)  // original URL request
-                 print(response.response) // URL response
-                 print(response.data)     // server data
-                 print(response.result)   // result of response serialization
-                 */
-                var jsonString:String = response.result.value!
-                
-                jsonString = jsonString.substringWithRange(Range<String.Index>(start: jsonString.startIndex.advancedBy(15), end: jsonString.endIndex.advancedBy(-1)))
-                
-                self.jsonResponse = jsonString
-                self.parseJsonResponse()
-        }
+        //Read json file
+        let path = NSBundle.mainBundle().pathForResource("data", ofType: "json")
+        var text = try? NSString(contentsOfFile: path!, encoding: NSUTF8StringEncoding) as String
+        print(text)
+        self.jsonResponse = text!
+        self.parseJsonResponse()
+        
+//        //Call api
+//        let URL:String = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags="+searchKeyWord
+//        Alamofire.request(.GET, URL)
+//            .responseString { response in
+//                /*
+//                 print(response.request)  // original URL request
+//                 print(response.response) // URL response
+//                 print(response.data)     // server data
+//                 print(response.result)   // result of response serialization
+//                 */
+//                var jsonString:String = response.result.value!
+//                
+//                jsonString = jsonString.substringWithRange(Range<String.Index>(start: jsonString.startIndex.advancedBy(15), end: jsonString.endIndex.advancedBy(-1)))
+//                
+//                self.jsonResponse = jsonString
+//                self.parseJsonResponse()
+//        }
     }
     
     func parseJsonResponse(){
-        print("JSON: "+jsonResponse)
+        var xxx = self.convert(jsonResponse)
+        self.items = xxx["photos"] as! Array
+        self.loadCollectionView()
         
+//        // convert String to NSData
+//        let data: NSData = jsonResponse.dataUsingEncoding(NSUTF8StringEncoding)!
+//        
+//        do {
+//            // convert NSData to 'AnyObject'
+//            let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+//            if let dictionary = object as? [String: AnyObject] {
+//                print("Parse json successful!")
+//                self.items = (dictionary["items"] as? Array)!
+//                self.loadCollectionView()
+//            }
+//        } catch{
+//            print("Error, Could not parse the JSON request: ")
+//        }
+    }
+    
+    func convert(src: NSString) -> NSDictionary {
         // convert String to NSData
-        let data: NSData = jsonResponse.dataUsingEncoding(NSUTF8StringEncoding)!
+        let data = src.dataUsingEncoding(NSUTF8StringEncoding)
+        var error: NSError?
         
+        // convert NSData to 'AnyObject'
+        let anyObj: AnyObject?
         do {
-            // convert NSData to 'AnyObject'
-            let object = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-            if let dictionary = object as? [String: AnyObject] {
-                print("Parse json successful!")
-                self.items = (dictionary["items"] as? Array)!
-                self.loadCollectionView()
-            }
-        } catch{
-            print("Error, Could not parse the JSON request: ")
+            anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options:.AllowFragments)
+        } catch let error1 as NSError {
+            error = error1
+            anyObj = nil
         }
+        
+        if(error != nil) {
+            // If there is an error parsing JSON, print it to the console
+            print("JSON Error \(error!.localizedDescription)")
+            //self.showError()
+            return NSDictionary()
+        } else {
+            print("Parse json successful!")
+            return anyObj as! NSDictionary
+        }
+        
     }
     
     func loadCollectionView(){
-        flickrPhotosCollection.dataSource = self
-        flickrPhotosCollection.delegate = self
+        print("SIZE: ", String(items.count))
+        flickrPhotosCollection.reloadData()
     }
     
     
@@ -98,9 +134,10 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let c = collectionView.dequeueReusableCellWithReuseIdentifier("FlickrPhotoCell", forIndexPath: indexPath) as! ExplorePhotoCollectionViewCell
-        let item:AnyObject = items[indexPath.row]
-        let link = item["link"] as? String
-        c.flickrPhoto.kf_setImageWithURL(NSURL(string: link!)!)
+//        let item:AnyObject = items[indexPath.row]
+//        let link = item["image_url"] as? String
+//        print("Link: "+link!)
+//        c.flickrPhoto.kf_setImageWithURL(NSURL(string: link!)!)
         return c
     }
     

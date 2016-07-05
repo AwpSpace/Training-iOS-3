@@ -16,6 +16,7 @@
 		65B3DADD1D2B642200CE11E4 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B3DAD91D2B642200CE11E4 /* Kingfisher.framework */; };
 		65B3DADE1D2B642200CE11E4 /* Rswift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B3DADA1D2B642200CE11E4 /* Rswift.framework */; };
 		65B3DADF1D2B642200CE11E4 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B3DADB1D2B642200CE11E4 /* SwiftyJSON.framework */; };
+		65B3DAE11D2BB7A900CE11E4 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 65B3DAE01D2BB7A800CE11E4 /* data.json */; };
 		65D5161E1D17C72A00AC66F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D5161D1D17C72A00AC66F6 /* AppDelegate.swift */; };
 		65D516231D17C72A00AC66F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65D516211D17C72A00AC66F6 /* Main.storyboard */; };
 		65D516251D17C72A00AC66F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65D516241D17C72A00AC66F6 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		65B3DAD91D2B642200CE11E4 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../../Library/Developer/Xcode/DerivedData/Training-iOS-3-eysxerrehkguetbbtlhhmdwuydow/Build/Products/Debug-iphonesimulator/Kingfisher.framework"; sourceTree = "<group>"; };
 		65B3DADA1D2B642200CE11E4 /* Rswift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rswift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Training-iOS-3-eysxerrehkguetbbtlhhmdwuydow/Build/Products/Debug-iphonesimulator/Rswift.framework"; sourceTree = "<group>"; };
 		65B3DADB1D2B642200CE11E4 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/Training-iOS-3-eysxerrehkguetbbtlhhmdwuydow/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		65B3DAE01D2BB7A800CE11E4 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		65D5161A1D17C72A00AC66F6 /* Training-iOS-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Training-iOS-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65D5161D1D17C72A00AC66F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65D516221D17C72A00AC66F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				65D516241D17C72A00AC66F6 /* Assets.xcassets */,
 				65D516261D17C72A00AC66F6 /* LaunchScreen.storyboard */,
 				65D516291D17C72A00AC66F6 /* Info.plist */,
+				65B3DAE01D2BB7A800CE11E4 /* data.json */,
 			);
 			path = "Training-iOS-3";
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				65D516281D17C72A00AC66F6 /* LaunchScreen.storyboard in Resources */,
 				65D516251D17C72A00AC66F6 /* Assets.xcassets in Resources */,
 				655267E91D17CC8800A55EAD /* Libraries in Resources */,
+				65B3DAE11D2BB7A900CE11E4 /* data.json in Resources */,
 				65D516231D17C72A00AC66F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
