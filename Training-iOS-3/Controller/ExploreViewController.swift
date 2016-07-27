@@ -16,6 +16,8 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
     @IBOutlet weak var inputKeyWord: UITextField!
     @IBOutlet weak var flickrPhotosCollection: UICollectionView!
     
+    let reuseIdentifier = "FlickrPhotoCell"
+    
     var jsonResponse:String = ""
     var items:Array<AnyObject> = []
     
@@ -23,7 +25,8 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
         super.viewDidLoad()
         flickrPhotosCollection.dataSource = self
         flickrPhotosCollection.delegate = self
-        // Do any additional setup after loading the view.
+        self.flickrPhotosCollection.registerClass(ExplorePhotoCollectionViewCell.self,
+                                          forCellWithReuseIdentifier: reuseIdentifier)
     }
 
     override func didReceiveMemoryWarning() {
@@ -120,6 +123,7 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
     
     func loadCollectionView(){
         print("SIZE: ", String(items.count))
+        self.flickrPhotosCollection?.reloadData()
         flickrPhotosCollection.reloadData()
     }
     
@@ -133,11 +137,16 @@ class ExploreViewController: UIViewController,UICollectionViewDataSource, UIColl
         return items.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let c = collectionView.dequeueReusableCellWithReuseIdentifier("FlickrPhotoCell", forIndexPath: indexPath) as! ExplorePhotoCollectionViewCell
-//        let item:AnyObject = items[indexPath.row]
-//        let link = item["image_url"] as? String
-//        print("Link: "+link!)
-//        c.flickrPhoto.kf_setImageWithURL(NSURL(string: link!)!)
+        let c = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ExplorePhotoCollectionViewCell
+        let item:AnyObject = items[indexPath.row]
+        let link = item["image_url"] as? String
+        print("Link: "+link!)
+        if(c.photo == nil){
+            print("imageview nil")
+        }
+//        c.setImageUrl(link!)
+        c.photo.kf_setImageWithURL(NSURL(string: link!)!)
+        
         return c
     }
     
